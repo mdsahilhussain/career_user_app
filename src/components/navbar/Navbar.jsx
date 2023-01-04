@@ -1,9 +1,17 @@
-import React from 'react'
-
-function Navbar() {
+import React from "react";
+import "./navbar.css";
+function Navbar(props) {
   return (
-    <div>Navbar</div>
-  )
+    <nav>
+      <div className="nav___list">
+        <h1>Profile</h1>
+        <div className="nav___list--info">
+          <img src="" alt="" />
+          <h4>Sahil Husain</h4>
+        </div>
+      </div>
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;

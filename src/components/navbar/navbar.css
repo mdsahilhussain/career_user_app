@@ -1,1 +1,27 @@
-rfce
+nav {
+  padding: 1rem 2rem 0rem 2rem;
+}
+
+.nav___list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--textColor);
+  padding-bottom: 2rem;
+
+}
+
+.nav___list--info {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+.nav___list--info img {
+  background-color: red;
+  height: 2.8rem;
+  width: 2.8rem;
+  object-fit: fill;
+  border-radius: 100%;
+  margin-right: 1.5rem;
+}
