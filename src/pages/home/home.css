@@ -47,12 +47,9 @@ section.home {
   align-items: center;
   padding: 1rem;
   border-bottom: 1px solid #5454546b;
+  cursor: pointer;
 }
 
-.home___card--list___link {
-    display: flex;
-    align-items: center;
-  }
 .home___card--list ul li:last-child {
   border-bottom: none;
 }

@@ -1,3 +1,5 @@
+@import url(../../App.css);
+
 nav {
   padding: 1rem 2rem 0rem 2rem;
 }
@@ -15,6 +17,7 @@ nav {
   display: flex;
   align-items: center;
   padding-right: 1rem;
+  cursor: pointer;
 }
 
 .nav___list--info img {

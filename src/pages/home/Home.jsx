@@ -1,8 +1,25 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./home.css";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchSingleUser, fetchData } from "../../features/userSlice";
 
 function Home() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect((e) => {
+    e?.preventdefault();
+    dispatch(fetchData());
+  }, [dispatch]);
+
+  const state = useSelector((state) => state);
+
+  const fetchSingleDataHandler = (id) => {
+    console.log("id", id);
+    dispatch(fetchSingleUser(id));
+    // navigate("/profile", { replace: true });
+  };
   return (
     <section className="home">
       <div className="home___card">
@@ -11,28 +28,12 @@ function Home() {
         </div>
         <div className="home___card--list">
           <ul>
-            <li>
-              <Link to="/profile" className="home___card--list___link">
-                <img src="" alt="" />
-                <h3>shail hussain</h3>
-              </Link>
-            </li>
-            <li>
-              <img src="" alt="" />
-              <h3>shail hussain</h3>
-            </li>
-            <li>
-              <img src="" alt="" />
-              <h3>shail hussain</h3>
-            </li>
-            <li>
-              <img src="" alt="" />
-              <h3>shail hussain</h3>
-            </li>
-            <li>
-              <img src="" alt="" />
-              <h3>shail hussain</h3>
-            </li>
+            {state.user.allUserData?.users?.map((item, index) => (
+              <li key={index} onClick={(e) => fetchSingleDataHandler(item.id)}>
+                <img src={item.profilepicture} alt="profilepicture" />
+                <h3>{item.name}</h3>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

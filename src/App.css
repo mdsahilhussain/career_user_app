@@ -37,7 +37,7 @@ p {
 
 h1 {
   font-size: 2.5rem;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 h2 {
@@ -51,16 +51,22 @@ span {
   font-weight: 400;
 }
 
+h3 {
+  font-weight: 600;
+}
+
 h4 {
   font-size: 1.5rem;
   font-weight: 300;
 }
 
 span {
-  opacity: 75%;
+  opacity: 60%;
 }
+
 p {
-  font-size: 1rem;
+  font-weight: 800;
+  font-size: 1.2rem;
 }
 
 ul {
@@ -75,6 +81,11 @@ a {
 
 a:hover {
   color: unset;
+}
+
+hr {
+  color: var(--textColor);
+  opacity: 60%;
 }
 
 .container {
@@ -102,6 +113,7 @@ a:hover {
   width: 80%;
 }
 
+/*! All section style */
 section.gallery,
 section.post,
 section.todo {
@@ -118,3 +130,5 @@ section.todo {
   color: var(--textColor);
   opacity: 60%;
 }
+
+/*! -----------------  */

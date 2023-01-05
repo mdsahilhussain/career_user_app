@@ -1,0 +1,90 @@
+@import url(../../App.css);
+
+section.profile {
+  height: 85vh;
+  width: 100%;
+}
+
+.profile___container {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.profile___container ul li {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.profile___ueser--info ul li {
+  justify-content: center;
+}
+
+.profile___container ul li > span:nth-child(2) {
+  margin: 0 0.5rem;
+}
+
+.profile___ueser--info {
+  width: 30%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.profile___ueser--info___personalDetail img {
+  width: 18rem;
+  height: 18rem;
+  background-color: red;
+  object-fit: fill;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+
+.line {
+  width: 80%;
+}
+
+.profile___ueser--info___companeyDetail h3 {
+  text-align: left;
+}
+
+.profile___ueser--info___address {
+  width: 70%;
+  height: 100%;
+  padding: 1rem 0 1rem 2rem;
+}
+
+.profile___ueser--info___address img {
+  width: 100%;
+  height: 50vh;
+  background-color: red;
+  margin: 1.5rem 0 0.5rem 0;
+  border-radius: 25px;
+}
+.profile___ueser--info___address ul {
+  margin-left: 2rem;
+}
+.profile___ueser--info___address li {
+  justify-content: center;
+  width: 45%;
+}
+
+.profile___ueser--info___address li:first-child {
+  margin-top: 2rem;
+}
+.profile___ueser--info___address li:last-child {
+  justify-content: flex-end;
+  width: 100%;
+}
+.profile___ueser--info___address li p {
+  margin-right: 1rem;
+}
+.profile___ueser--info___address li p span {
+  font-size: 1rem;
+}
