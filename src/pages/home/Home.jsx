@@ -8,17 +8,20 @@ function Home() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  useEffect((e) => {
-    e?.preventdefault();
-    dispatch(fetchData());
-  }, [dispatch]);
+  useEffect(
+    (e) => {
+      e?.preventdefault();
+      dispatch(fetchData());
+    },
+    [dispatch]
+  );
 
   const state = useSelector((state) => state);
 
   const fetchSingleDataHandler = (id) => {
     console.log("id", id);
     dispatch(fetchSingleUser(id));
-    // navigate("/profile", { replace: true });
+    navigate("/profile", { replace: true });
   };
   return (
     <section className="home">

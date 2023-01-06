@@ -15,12 +15,19 @@ section.profile {
 
 .profile___container ul li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  text-align: right;
   margin-top: 1rem;
 }
 
-.profile___ueser--info ul li {
+/* .profile___ueser--info ul li {
   justify-content: center;
+} */
+
+.profile___ueser--info ul li > span:nth-child(1),
+.profile___ueser--info___address li > span:nth-child(1) {
+  text-align: right;
+  width: 9rem;
 }
 
 .profile___container ul li > span:nth-child(2) {
@@ -54,6 +61,16 @@ section.profile {
   text-align: left;
 }
 
+.profile___ueser--info___companeyDetail > h3,
+.profile___ueser--info___address > h3 {
+  opacity: 60%;
+  text-align: center;
+}
+
+.profile___ueser--info___address > h3 {
+  text-align: left;
+}
+
 .profile___ueser--info___address {
   width: 70%;
   height: 100%;
@@ -69,10 +86,6 @@ section.profile {
 }
 .profile___ueser--info___address ul {
   margin-left: 2rem;
-}
-.profile___ueser--info___address li {
-  justify-content: center;
-  width: 45%;
 }
 
 .profile___ueser--info___address li:first-child {

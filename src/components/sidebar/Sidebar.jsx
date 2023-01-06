@@ -27,7 +27,8 @@ function Sidebar() {
         <ul>
           {linkArray.map((item, index) => (
             <NavLink
-              to={item.linkUrl}
+              to={{ pathname: item.linkUrl }}
+              state={{ titleName: `${item.linkName}` }}
               key={index}
               className={({ isActive }) => (isActive ? "active" : "inactive")}
             >
