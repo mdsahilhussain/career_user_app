@@ -16,13 +16,9 @@ section.profile {
 .profile___container ul li {
   display: flex;
   align-items: flex-start;
-  text-align: right;
+  text-align: left;
   margin-top: 1rem;
 }
-
-/* .profile___ueser--info ul li {
-  justify-content: center;
-} */
 
 .profile___ueser--info ul li > span:nth-child(1),
 .profile___ueser--info___address li > span:nth-child(1) {
@@ -44,13 +40,13 @@ section.profile {
   justify-content: space-around;
 }
 
-.profile___ueser--info___personalDetail img {
-  width: 18rem;
-  height: 18rem;
+.profile___ueser--info___personalDetail > img {
+  width: 15rem;
+  height: 15rem;
   background-color: red;
   object-fit: fill;
   border-radius: 50%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .line {

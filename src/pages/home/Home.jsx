@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./home.css";
 import { useSelector, useDispatch } from "react-redux";
+import profileImage from "../../assest/profileImage.png";
 import { fetchSingleUser, fetchData } from "../../features/userSlice";
 
 function Home() {
@@ -34,6 +35,8 @@ function Home() {
             {state.user.allUserData?.users?.map((item, index) => (
               <li key={index} onClick={(e) => fetchSingleDataHandler(item.id)}>
                 <img src={item.profilepicture} alt="profilepicture" />
+                {/*// ! ================================= */}
+                {/* <img src={profileImage} alt="profilepicture" /> */}
                 <h3>{item.name}</h3>
               </li>
             ))}

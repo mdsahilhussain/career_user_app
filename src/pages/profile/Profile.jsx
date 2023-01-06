@@ -2,6 +2,7 @@ import React from "react";
 import "./profile.css";
 import { useSelector } from "react-redux";
 import { selectUserDetail } from "../../features/userSlice";
+import profileImage from "../../assest/profileImage.png"
 function Profile() {
   const data = useSelector(selectUserDetail);
   // console.log("data", data);
@@ -12,6 +13,8 @@ function Profile() {
         <div className="profile___ueser--info">
           <div className="profile___ueser--info___personalDetail">
             <img src={data?.profilepicture} alt="profilepicture" />
+            {/*// ! ================================= */}
+            {/* <img src={profileImage} alt="profilepicture" /> */}
             <h2>{data?.name}</h2>
             <ul>
               <li>
