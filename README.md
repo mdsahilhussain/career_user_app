@@ -2,6 +2,8 @@
 
 This user dashboard of project content, help the user to connect with friends, upload photos, and create lists of things to do daily to increase the lifestyle of the user.
 
+![Screenshot (21)](https://user-images.githubusercontent.com/70509500/211083276-fd8c6888-ce15-4dd2-89ad-dd7f071993b2.png)
+
 ### Features
 
 - A calendar or schedule feature that allows the user to view and manage their upcoming events and appointments.
@@ -34,5 +36,7 @@ To run project, run the following command
 ```
   npm start
 ```
+## API testing
+I use postman to test the API.
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/19739553-c153769d-9b95-475d-ae78-bd82f67eb65c?action=collection%2Ffork&collection-url=entityId%3D19739553-c153769d-9b95-475d-ae78-bd82f67eb65c%26entityType%3Dcollection%26workspaceId%3D9250a208-9470-45c0-957a-94543142dc82)
