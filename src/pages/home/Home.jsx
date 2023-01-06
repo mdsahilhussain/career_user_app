@@ -3,7 +3,11 @@ import { useNavigate } from "react-router-dom";
 import "./home.css";
 import { useSelector, useDispatch } from "react-redux";
 import profileImage from "../../assest/profileImage.png";
-import { fetchSingleUser, fetchData } from "../../features/userSlice";
+import {
+  fetchSingleUser,
+  fetchData,
+  selectAllDetail,
+} from "../../features/userSlice";
 
 function Home() {
   const dispatch = useDispatch();
@@ -17,10 +21,9 @@ function Home() {
     [dispatch]
   );
 
-  const state = useSelector((state) => state);
+  const userData = useSelector(selectAllDetail);
 
   const fetchSingleDataHandler = (id) => {
-    console.log("id", id);
     dispatch(fetchSingleUser(id));
     navigate("/profile", { replace: true });
   };
@@ -32,11 +35,11 @@ function Home() {
         </div>
         <div className="home___card--list">
           <ul>
-            {state.user.allUserData?.users?.map((item, index) => (
+            {userData?.users?.map((item, index) => (
               <li key={index} onClick={(e) => fetchSingleDataHandler(item.id)}>
-                {/* <img src={item.profilepicture} alt="profilepicture" /> */}
-                {/*// ! ================================= */}
-                <img src={profileImage} alt="profilepicture" />
+                <img src={item.profilepicture} alt="profilepicture" />
+                {/* // ! ================================= */}
+                {/* <img src={profileImage} alt="profilepicture" /> */}
                 <h3>{item.name}</h3>
               </li>
             ))}

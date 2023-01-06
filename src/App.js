@@ -5,7 +5,7 @@ import { Gallery, ToDo, Post, Profile } from "./pages";
 import { Sidebar, Navbar, Card } from "./components";
 function App() {
   const [isCardShow, setIsCardShow] = useState(false);
-  
+
   const toogleButton = () => {
     setIsCardShow((prevState) => !prevState);
   };
@@ -28,7 +28,10 @@ function App() {
               top: "7rem",
             }}
           >
-            <Card isCardShow={isCardShow} />
+            <Card
+              isCardShow={isCardShow}
+              toogleButton={(e) => toogleButton()}
+            />
           </div>
           <Routes>
             <Route path="/*" element={<Profile />} />

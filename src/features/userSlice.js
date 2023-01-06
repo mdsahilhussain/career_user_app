@@ -63,5 +63,6 @@ export const userSlice = createSlice({
 
 export const { fetchSingleUser } = userSlice.actions;
 export const selectUserDetail = (state) => state.user.userDetail;
+export const selectAllDetail = (state) => state.user.allUserData;
 export const selectNavDetail = (state) => state.user.navDetail;
 export default userSlice.reducer;

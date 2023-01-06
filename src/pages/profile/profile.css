@@ -3,6 +3,7 @@
 section.profile {
   height: 85vh;
   width: 100%;
+  cursor: pointer;
 }
 
 .profile___container {
