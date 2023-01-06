@@ -7,12 +7,18 @@ import {
   selectNavDetail,
   selectAllDetail,
   fetchSingleUser,
+  // selectcardData,
+  // selectcardData_2,
 } from "../../features/userSlice";
 function Card({ isCardShow, toogleButton }) {
-  // const { isCardShow, toogleButton } = props;
   const allData = useSelector(selectAllDetail);
   const navData = useSelector(selectNavDetail);
-  const uniqueID = navData?.id;
+  //Todo ===============================================
+  // const otherAccount = useSelector(selectcardData);
+  // const otherAccount_2 = useSelector(selectcardData_2);
+  // const card = Object.assign({}, otherAccount, otherAccount_2);
+  // const uniqueID = navData?.id;
+  //Todo ===========================================================
   const [randomData, setRandomData] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -42,17 +48,8 @@ function Card({ isCardShow, toogleButton }) {
   }, []);
 
   const fetchSingleDataHandler = (id) => {
-    const tempData = allData?.users?.find((user) => user?.id === uniqueID);
-    setRandomData((prevRandomData) => [
-      ...prevRandomData,
-      {
-        id: tempData?.id,
-        name: tempData?.name,
-        profileImage: tempData?.profilepicture,
-      },
-    ]);
     dispatch(fetchSingleUser(id));
-    navigate("/profile", { replace: true });
+    navigate("/user/profile", { replace: true });
   };
 
   const logOutHandler = () => {

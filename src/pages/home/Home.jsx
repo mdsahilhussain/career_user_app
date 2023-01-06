@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./home.css";
 import { useSelector, useDispatch } from "react-redux";
-import profileImage from "../../assest/profileImage.png";
 import {
   fetchSingleUser,
   fetchData,
   selectAllDetail,
+  // fetchCardData,
 } from "../../features/userSlice";
 
 function Home() {
@@ -25,7 +25,8 @@ function Home() {
 
   const fetchSingleDataHandler = (id) => {
     dispatch(fetchSingleUser(id));
-    navigate("/profile", { replace: true });
+    navigate("/user/profile", { replace: true });
+    //Todo   dispatch(fetchCardData(id));
   };
   return (
     <section className="home">
@@ -38,8 +39,6 @@ function Home() {
             {userData?.users?.map((item, index) => (
               <li key={index} onClick={(e) => fetchSingleDataHandler(item.id)}>
                 <img src={item.profilepicture} alt="profilepicture" />
-                {/* // ! ================================= */}
-                {/* <img src={profileImage} alt="profilepicture" /> */}
                 <h3>{item.name}</h3>
               </li>
             ))}

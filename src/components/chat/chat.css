@@ -1,0 +1,74 @@
+@import url(../../App.css);
+
+section.chat {
+  height: fit-content;
+  width: 25rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: var(--bg-color) !important;
+}
+
+.chat___header {
+  padding: 1.2rem 1rem 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--cardColor);
+  border-top-left-radius: 20px;
+  color: var(--bg-color);
+  border-top-right-radius: 20px;
+}
+
+.chat___header--title {
+  display: flex;
+  align-items: center;
+}
+
+.chat___header--title > h3 {
+  margin-left: 1rem;
+  color: var(--bg-color);
+}
+.chat___box {
+  height: 30vh;
+  overflow: hidden;
+  margin-right: 0.5rem;
+  overflow-y: scroll;
+}
+
+.chat___box ul {
+  display: flex;
+  flex-direction: column;
+}
+.chat__box--username {
+  display: flex;
+  align-items: center;
+}
+.chat___box ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.3rem;
+}
+
+.chat___box ul li img {
+  background-color: #f6f6f6;
+  height: 2.8rem;
+  width: 2.8rem;
+  object-fit: fill;
+  border-radius: 100%;
+  margin-right: 1rem;
+}
+
+.chat___box ul li span {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: gray;
+}
+
+.chat___box ul li:first-child span,
+.chat___box ul li:nth-child(3) span,
+.chat___box ul li:nth-child(4) span,
+.chat___box ul li:nth-child(5) span {
+  background-color: green;
+}

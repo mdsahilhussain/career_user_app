@@ -56,7 +56,7 @@ section.home {
 }
 
 .home___card--list ul li img {
-  background-color: red;
+  background-color: #f6f6f6;
   height: 2.8rem;
   width: 2.8rem;
   object-fit: fill;

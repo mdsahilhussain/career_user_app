@@ -3,7 +3,6 @@
 section.profile {
   height: 85vh;
   width: 100%;
-  cursor: pointer;
 }
 
 .profile___container {
@@ -44,7 +43,7 @@ section.profile {
 .profile___ueser--info___personalDetail > img {
   width: 15rem;
   height: 15rem;
-  background-color: red;
+  background-color: gray;
   object-fit: fill;
   border-radius: 50%;
   margin-bottom: 0.7rem;

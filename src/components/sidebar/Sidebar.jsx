@@ -3,10 +3,13 @@ import { NavLink } from "react-router-dom";
 import "./sidebar.css";
 
 function Sidebar() {
+  let activeStyle = {
+    color: "#ffffff",
+  };
   const linkArray = [
     {
       linkName: "Profile",
-      linkUrl: "/profile",
+      linkUrl: "profile",
     },
     {
       linkName: "Post",
@@ -30,7 +33,7 @@ function Sidebar() {
               to={{ pathname: item.linkUrl }}
               state={{ titleName: `${item.linkName}` }}
               key={index}
-              className={({ isActive }) => (isActive ? "active" : "inactive")}
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
               <li>
                 <h2>{item.linkName}</h2>

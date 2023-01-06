@@ -1,10 +1,12 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, current } from "@reduxjs/toolkit";
 // import { push } from 'connected-react-router';
 
 const initialState = {
   allUserData: null,
   userDetail: null,
   navDetail: null,
+  cardData: null,
+  cardData_2: null,
   isLoading: true,
   isError: false,
 };
@@ -39,30 +41,77 @@ export const userSlice = createSlice({
       state.navDetail = Object.assign(
         {},
         {
-          id: singlData.id,
-          name: singlData.name,
-          profileImage: singlData.profilepicture,
-          email: singlData.email,
+          id: singlData?.id,
+          name: singlData?.name,
+          profileImage: singlData?.profilepicture,
+          email: singlData?.email,
         }
       );
+    },
+    fetchCardData: (state, action) => {
+      var random = undefined;
+      for (let i = 0; i < 1; i++) {
+        let randomId = Math.floor(Math.random() * 10) + 1;
+        if (randomId !== action.payload) {
+          let tempData = state?.allUserData?.users?.find(
+            (user) => user.id === randomId
+          );
+          state.cardData = Object.assign(
+            {},
+            {
+              id: tempData?.id,
+              name: tempData?.name,
+              profileImage: tempData?.profilepicture,
+              email: tempData?.email,
+            }
+          );
+          i++;
+        }
+      }
+      for (let i = 0; i < 1; i++) {
+        let randomId_2 = Math.floor(Math.random() * 10) + 1;
+        if (randomId_2 !== random && randomId_2 !== action.payload) {
+          let tempData = state?.allUserData?.users?.find(
+            (user) => user.id === randomId_2
+          );
+          state.cardData_2 = Object.assign(
+            {},
+            {
+              id: tempData?.id,
+              name: tempData?.name,
+              profileImage: tempData?.profilepicture,
+              email: tempData?.email,
+            }
+          );
+          i++;
+        }
+      }
+      //! ======================================
+      // state.cardData = state.navDetail;
       // for (let i = 0; i < 2; i++) {
-      //   let id = Math.floor(Math.random() * 10) + 1;
-      //   console.log("random id", id);
-      //   let randomData = state.allUserData.users.find((user) => user.id === id);
-      //   console.log("randomData", randomData);
-      //   state.navDetail = Object.assign(state.navDetail, {
-      //     id: randomData.id,
-      //     name: randomData.name,
-      //     profileImage: randomData.profilepicture,
-      //   });
+      //   let randomId = Math.floor(Math.random() * 10) + 1;
+      //   const tempData = state?.allUserData?.users?.find(
+      //     (user) => user.id === randomId
+      //   );
+      //   console.log("temp", current(tempData))
+      //   state.cardData = state.cardData.map((prevData) => [
+      //     ...prevData,
+      //     {
+      //       id: tempData?.id,
+      //       name: tempData?.name,
+      //       profileImage: tempData?.profilepicture,
+      //       email: tempData?.email,
+      //     },
+      //   ]);
       // }
-      // console.log("sate.nav", state.navDetail);
     },
   },
 });
 
-export const { fetchSingleUser } = userSlice.actions;
-export const selectUserDetail = (state) => state.user.userDetail;
+export const { fetchSingleUser, fetchCardData } = userSlice.actions;
 export const selectAllDetail = (state) => state.user.allUserData;
-export const selectNavDetail = (state) => state.user.navDetail;
+export const selectUserDetail = (state) => state.user.userDetail;
+export const selectNavDetail = (state) => state.user.allUserData;
+export const selectcardData = (state) => state.user.cardData;
+export const selectcardData_2 = (state) => state.user.cardData_2;
 export default userSlice.reducer;

@@ -39,10 +39,3 @@ section.sidebar {
   color: var(--bg-color);
 }
 
-a.active {
-  color: var(--bg-color);
-}
-
-a.inactive {
-  color: #f2f2f25e;
-}
