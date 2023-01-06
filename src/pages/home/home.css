@@ -45,7 +45,7 @@ section.home {
 .home___card--list ul li {
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 0rem;
   border-bottom: 1px solid #5454546b;
   cursor: pointer;
 }
@@ -56,8 +56,8 @@ section.home {
 
 .home___card--list ul li img {
   background-color: red;
-  height: 2.8rem;
-  width: 2.8rem;
+  height: 2.5rem;
+  width: 2.5rem;
   object-fit: fill;
   border-radius: 100%;
   margin-right: 1rem;
