@@ -12,20 +12,20 @@ function Card({ isCardShow, toogleButton }) {
   // const { isCardShow, toogleButton } = props;
   const allData = useSelector(selectAllDetail);
   const navData = useSelector(selectNavDetail);
-  const uniqueID = navData.id;
+  const uniqueID = navData?.id;
   const [randomData, setRandomData] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const randomDataFeatch = (randomID) => {
     console.log("randomId", randomID);
-    const tempData = allData?.users?.find((user) => user.id === randomID);
+    const tempData = allData?.users?.find((user) => user?.id === randomID);
     setRandomData((prevRandomData) => [
       ...prevRandomData,
       {
-        id: tempData.id,
-        name: tempData.name,
-        profileImage: tempData.profilepicture,
+        id: tempData?.id,
+        name: tempData?.name,
+        profileImage: tempData?.profilepicture,
       },
     ]);
   };
@@ -42,6 +42,15 @@ function Card({ isCardShow, toogleButton }) {
   }, []);
 
   const fetchSingleDataHandler = (id) => {
+    const tempData = allData?.users?.find((user) => user?.id === uniqueID);
+    setRandomData((prevRandomData) => [
+      ...prevRandomData,
+      {
+        id: tempData?.id,
+        name: tempData?.name,
+        profileImage: tempData?.profilepicture,
+      },
+    ]);
     dispatch(fetchSingleUser(id));
     navigate("/profile", { replace: true });
   };
