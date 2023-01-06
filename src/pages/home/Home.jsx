@@ -34,9 +34,9 @@ function Home() {
           <ul>
             {state.user.allUserData?.users?.map((item, index) => (
               <li key={index} onClick={(e) => fetchSingleDataHandler(item.id)}>
-                <img src={item.profilepicture} alt="profilepicture" />
+                {/* <img src={item.profilepicture} alt="profilepicture" /> */}
                 {/*// ! ================================= */}
-                {/* <img src={profileImage} alt="profilepicture" /> */}
+                <img src={profileImage} alt="profilepicture" />
                 <h3>{item.name}</h3>
               </li>
             ))}

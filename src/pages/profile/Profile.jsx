@@ -12,9 +12,9 @@ function Profile() {
       <div className="profile___container">
         <div className="profile___ueser--info">
           <div className="profile___ueser--info___personalDetail">
-            <img src={data?.profilepicture} alt="profilepicture" />
+            {/* <img src={data?.profilepicture} alt="profilepicture" /> */}
             {/*// ! ================================= */}
-            {/* <img src={profileImage} alt="profilepicture" /> */}
+            <img src={profileImage} alt="profilepicture" />
             <h2>{data?.name}</h2>
             <ul>
               <li>
