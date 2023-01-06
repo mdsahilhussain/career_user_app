@@ -30,7 +30,7 @@ section.home {
 .home___card--list {
   background-color: var(--bg-color);
   padding: 0rem 2rem;
-  width: 100%;
+  width: 80%;
   height: 80%;
 }
 
